@@ -137,13 +137,12 @@ class MainActivity : AppCompatActivity() {
         if (currentIndex < statusMessages.size) {
             statusTextView.text = statusMessages[currentIndex]
             currentIndex++
-            var calcDelay =  currentIndex % 25;
-            calcDelay *= 5;
+            var calcDelay = 20;
             handler.postDelayed({ updateStatusMessages() }, calcDelay.toLong())
         }
         else
         {
-            handler.postDelayed({ GoToNextActivity() }, 1000);
+            handler.postDelayed({ GoToNextActivity() }, 280);
         }
     }
 
