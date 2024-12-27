@@ -48,10 +48,11 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val itemList = listOf(
-            Item("AI Blog", AIBlog::class.java),
+            Item("AI Blog (USING SQL)", AIBlog::class.java),
             Item("BMI", BMI::class.java),
             Item("Calculator", CalculatorActivity::class.java),
             Item("Fib and Fac", SquencesActivity::class.java),
+            Item("SMS", SMSActivity::class.java),
         )
 
         val itemAdapter = ItemAdapter(itemList, this)
