@@ -51,7 +51,7 @@ class HomeActivity : AppCompatActivity() {
             Item("AI Blog", AIBlog::class.java),
             Item("BMI", BMI::class.java),
             Item("Calculator", CalculatorActivity::class.java),
-            Item("Another Project", AIBlog::class.java),
+            Item("Fib and Fac", SquencesActivity::class.java),
         )
 
         val itemAdapter = ItemAdapter(itemList, this)
