@@ -1,5 +1,6 @@
 package com.example.test
 
+import LoginManager
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -48,8 +49,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    //navigate section
     private fun GoToNextActivity() {
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
+
+        var loginManager = LoginManager(this);
+
+        if(loginManager.IsLogin()){
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+        else{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }
