@@ -48,7 +48,7 @@ class HomeActivity : AppCompatActivity() {
         val itemList = listOf(
             Item("AI Blog", AIBlog::class.java),
             Item("BMI", BMI::class.java),
-            Item("Project 1", AIBlog::class.java),
+            Item("Calculator", CalculatorActivity::class.java),
             Item("Another Project", AIBlog::class.java),
         )
 
