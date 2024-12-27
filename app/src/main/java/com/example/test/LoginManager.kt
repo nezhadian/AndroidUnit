@@ -6,25 +6,33 @@ class LoginManager(context: Context) {
     // SharedPreferences instance
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
 
-    // Key for the boolean value
-    private val LOGINKEY = "is_login"
+    // Keys for SharedPreferences
+    private val LOGIN_KEY = "is_login"
+    private val USERNAME_KEY = "username"
 
     // Check if the user is logged in
     fun IsLogin(): Boolean {
-        return sharedPreferences.getBoolean(LOGINKEY, false)
+        return sharedPreferences.getBoolean(LOGIN_KEY, false)
     }
 
-    // Log in the user
-    fun Login() {
+    // Get the saved username
+    fun GetUsername(): String? {
+        return sharedPreferences.getString(USERNAME_KEY, null)
+    }
+
+    // Log in the user and save the username
+    fun Login(username: String) {
         val editor = sharedPreferences.edit()
-        editor.putBoolean(LOGINKEY, true)
+        editor.putBoolean(LOGIN_KEY, true)
+        editor.putString(USERNAME_KEY, username)
         editor.apply()
     }
 
-    // Log out the user
+    // Log out the user and clear the username
     fun Logout() {
         val editor = sharedPreferences.edit()
-        editor.putBoolean(LOGINKEY, false)
+        editor.putBoolean(LOGIN_KEY, false)
+        editor.remove(USERNAME_KEY) // Clear the username
         editor.apply()
     }
 }

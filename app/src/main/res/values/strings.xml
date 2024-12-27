@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Test</string>
+    <string name="lgn_username">username</string>
+    <string name="lgn_passwrd">password</string>
+    <string name="lgn_actBtn">Login</string>
+    <string name="lgn_password">password</string>
 </resources>
