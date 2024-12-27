@@ -5,6 +5,7 @@ import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.math.BigInteger
 
 class SquencesActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class SquencesActivity : AppCompatActivity() {
                 val input = s?.toString() ?: ""
                 if (input.isNotEmpty()) {
                     try {
-                        val number = input.toLong()
+                        val number = input.toInt()
                         // Calculate Fibonacci and Factorial
                         val fibonacci = calculateFibonacci(number)
                         val factorial = calculateFactorial(number)
@@ -53,12 +54,12 @@ class SquencesActivity : AppCompatActivity() {
     }
 
     // Method to calculate Fibonacci number
-    private fun calculateFibonacci(n: Long): Long {
-        if (n <= 0) return 0
-        if (n == 1L) return 1
+    private fun calculateFibonacci(n: Int): BigInteger {
+        if (n <= 0) return BigInteger.ZERO
+        if (n == 1) return BigInteger.ONE
 
-        var a = 0L
-        var b = 1L
+        var a = BigInteger.ZERO
+        var b = BigInteger.ONE
         for (i in 2..n) {
             val temp = a + b
             a = b
@@ -68,12 +69,12 @@ class SquencesActivity : AppCompatActivity() {
     }
 
     // Method to calculate Factorial
-    private fun calculateFactorial(n: Long): Long {
-        if (n <= 0) return 1
+    private fun calculateFactorial(n: Int): BigInteger {
+        if (n <= 0) return BigInteger.ONE
 
-        var result = 1L
+        var result = BigInteger.ONE
         for (i in 1..n) {
-            result *= i
+            result *= BigInteger.valueOf(i.toLong())
         }
         return result
     }
