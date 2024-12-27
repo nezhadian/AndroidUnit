@@ -24,11 +24,6 @@ class LoginActivity : AppCompatActivity() {
             val username = txtUsername.text.toString()
             val password = txtPassword.text.toString()
 
-            if (username != "admin") {
-                txtStatus.text = "invalid username (use \"admin\")"
-                return@setOnClickListener;
-            }
-
             if (password != "12345678") {
                 txtStatus.text = "invalid password (use \"12345678\")"
                 return@setOnClickListener;
